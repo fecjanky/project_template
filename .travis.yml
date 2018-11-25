@@ -24,7 +24,7 @@ matrix:
         - pip install --user urllib3[secure] cpp-coveralls
       after_success:
         - which $GCOV_USED
-        - coveralls --gcov $(which $GCOV_USED) --include include  --gcov-options '\-lmpcu' --root .. --build-root .
+        - coveralls --gcov $(which $GCOV_USED) --include header-only static-lib shared-lib executable --gcov-options '\-lmpcu' --root .. --build-root .
 
     - compiler: clang
       env:
